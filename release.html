@@ -1,0 +1,415 @@
+# Releases Page (`releases.html`)
+
+Copy the complete code below into a new file named `releases.html` in your GitHub repository.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Releases | Sanjay Shangloo</title>
+  <meta name="description" content="Official music releases by Sanjay Shangloo including bhajans, ghazals, devotional songs and original compositions." />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --card: rgba(255,255,255,0.06);
+      --text: #ffffff;
+      --muted: #c7c7c7;
+      --gold: #d4af37;
+      --gold-2: #f7d774;
+      --border: rgba(255,255,255,0.12);
+      --shadow: 0 20px 60px rgba(0,0,0,0.45);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(212,175,55,0.15), transparent 35%),
+        radial-gradient(circle at top left, rgba(212,175,55,0.08), transparent 30%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    /* Musical Notes Background */
+    .music-background {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .note {
+      position: absolute;
+      top: -100px;
+      font-size: 56px;
+      font-weight: bold;
+      color: rgba(247, 215, 116, 0.22);
+      text-shadow: 0 0 18px rgba(247, 215, 116, 0.25);
+      animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-100px) rotate(0deg);
+        opacity: 0;
+      }
+      10% { opacity: 1; }
+      90% { opacity: 1; }
+      100% {
+        transform: translateY(120vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    header, main, footer {
+      position: relative;
+      z-index: 1;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(10px);
+      background: rgba(10,10,10,0.88);
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 16px 0;
+    }
+
+    .menu {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .menu a {
+      position: relative;
+      font-size: 18px;
+      font-weight: 600;
+      color: #fff;
+      padding: 6px 0;
+      transition: color 0.3s ease;
+    }
+
+    .menu a:hover,
+    .menu a.active {
+      color: var(--gold-2);
+    }
+
+    .menu a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 0;
+      height: 2px;
+      background: var(--gold-2);
+      transition: width 0.3s ease;
+    }
+
+    .menu a:hover::after,
+    .menu a.active::after {
+      width: 100%; 
+    }
+
+    .hero {
+      text-align: center;
+      padding: 90px 0 40px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 8px 14px;
+      border: 1px solid rgba(212,175,55,0.35);
+      border-radius: 999px;
+      background: rgba(212,175,55,0.08);
+      color: var(--gold-2);
+      font-size: 13px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(42px, 7vw, 78px);
+      line-height: 1.05;
+      letter-spacing: -1px;
+    }
+
+    .lead {
+      color: var(--muted);
+      font-size: 18px;
+      max-width: 760px;
+      margin: 20px auto 0;
+    }
+
+    .section {
+      padding: 20px 0 80px;
+    }
+
+    .release-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+    }
+
+    .release-cover {
+      width: 100%; 
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 20px;
+      margin-bottom: 18px;
+      border: 1px solid var(--border);
+    }
+
+    .release-title {
+      font-size: 24px;
+      margin: 0 0 8px;
+      color: var(--gold-2);
+    }
+
+    .release-desc {
+      color: var(--muted);
+      margin-bottom: 18px;
+      font-size: 15px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 18px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 14px;
+      transition: 0.25s ease;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--gold), #f8e38d);
+      color: #111;
+    }
+
+    .btn-secondary {
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.04);
+      color: #fff;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 30px 0 60px;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    @media (max-width: 900px) {
+      .release-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .menu {
+        gap: 14px;
+      }
+
+      .menu a {
+        font-size: 14px;
+      }
+
+      .note {
+        font-size: 40px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Musical Notes Background -->
+  <div class="music-background">
+    <span class="note" style="left: 5%; animation-duration: 12s;">♪</span>
+    <span class="note" style="left: 15%; animation-duration: 18s; animation-delay: 2s;">♫</span>
+    <span class="note" style="left: 25%; animation-duration: 15s; animation-delay: 4s;">♬</span>
+    <span class="note" style="left: 35%; animation-duration: 20s; animation-delay: 1s;">♩</span>
+    <span class="note" style="left: 45%; animation-duration: 14s; animation-delay: 3s;">♪</span>
+    <span class="note" style="left: 55%; animation-duration: 17s; animation-delay: 5s;">♫</span>
+    <span class="note" style="left: 65%; animation-duration: 13s; animation-delay: 2s;">♬</span>
+    <span class="note" style="left: 75%; animation-duration: 19s; animation-delay: 4s;">♩</span>
+    <span class="note" style="left: 85%; animation-duration: 16s; animation-delay: 1s;">♪</span>
+    <span class="note" style="left: 95%; animation-duration: 18s; animation-delay: 6s;">♫</span>
+  </div>
+
+  <header>
+    <div class="container">
+      <nav>
+        <div class="menu">
+          <a href="index.html">Home</a>
+          <a href="releases.html" class="active">Releases</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="videos.html">Videos</a>
+          <a href="#booking">Book Shows</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <div class="badge">Official Music Releases</div>
+      <h1>Latest Releases</h1>
+      <p class="lead">
+        Explore devotional bhajans, soulful ghazals, original compositions and timeless melodies by Sanjay Shangloo.
+      </p>
+    </section>
+
+    <section class="section container">
+      <div class="release-grid">
+
+        <!-- Release 1 -->
+        <div class="card">
+          <img src="release1.jpg" alt="Release 1" class="release-cover" loading="lazy">
+          <h3 class="release-title">Bhajan Release Title</h3>
+          <p class="release-desc">A soulful devotional release available on YouTube and all major music platforms.</p>
+          <div class="buttons">
+            <a href="https://www.youtube.com/@SANJAYSHANGLOO" target="_blank" class="btn btn-primary">
+              <i class="fab fa-youtube"></i> Watch
+            </a>
+            <a href="#" target="_blank" class="btn btn-secondary">
+              <i class="fab fa-spotify"></i> Listen
+            </a>
+          </div>
+        </div>
+
+        <!-- Release 2 -->
+        <div class="card">
+          <img src="release2.jpg" alt="Release 2" class="release-cover" loading="lazy">
+          <h3 class="release-title">Ghazal Release Title</h3>
+          <p class="release-desc">A melodious ghazal composition with heartfelt lyrics and timeless music.</p>
+          <div class="buttons">
+            <a href="https://www.youtube.com/@SANJAYSHANGLOO" target="_blank" class="btn btn-primary">
+              <i class="fab fa-youtube"></i> Watch
+            </a>
+            <a href="#" target="_blank" class="btn btn-secondary">
+              <i class="fab fa-apple"></i> Listen
+            </a>
+          </div>
+        </div>
+
+        <!-- Release 3 -->
+        <div class="card">
+          <img src="release3.jpg" alt="Release 3" class="release-cover" loading="lazy">
+          <h3 class="release-title">Original Composition</h3>
+          <p class="release-desc">An original musical creation composed and performed by Sanjay Shangloo.</p>
+          <div class="buttons">
+            <a href="https://www.youtube.com/@SANJAYSHANGLOO" target="_blank" class="btn btn-primary">
+              <i class="fab fa-youtube"></i> Watch
+            </a>
+            <a href="#" target="_blank" class="btn btn-secondary">
+              <i class="fas fa-music"></i> Listen
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div style="margin-top: 30px; text-align: center;">
+      <h3 style="color: #f7d774; margin-bottom: 20px;">Follow Sanjay Shangloo</h3>
+      <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+
+        <a href="https://www.facebook.com/sanjayshangloomusic" target="_blank"
+           style="display: inline-block; padding: 12px 20px; background: #1877F2; color: white; border-radius: 50px; font-weight: bold;">
+          <i class="fab fa-facebook-f" style="margin-right: 8px;"></i> Facebook
+        </a>
+
+        <a href="https://www.instagram.com/sanjayshanglooo" target="_blank"
+           style="display: inline-block; padding: 12px 20px; background: #E1306C; color: white; border-radius: 50px; font-weight: bold;">
+          <i class="fab fa-instagram" style="margin-right: 8px;"></i> Instagram
+        </a>
+
+        <a href="https://www.youtube.com/@SANJAYSHANGLOO/featured" target="_blank"
+           style="display: inline-block; padding: 12px 20px; background: #FF0000; color: white; border-radius: 50px; font-weight: bold;">
+          <i class="fab fa-youtube" style="margin-right: 8px;"></i> YouTube
+        </a>
+
+      </div>
+    </div>
+
+    <div class="container" style="margin-top: 30px;">
+      © 2026 Sanjay Shangloo. All Rights Reserved.
+    </div>
+  </footer>
+
+</body>
+</html>
+```
+
+## 📌 Replace These Items
+
+* `release1.jpg`, `release2.jpg`, `release3.jpg` → upload your album cover images.
+* `Bhajan Release Title`, `Ghazal Release Title` → replace with actual song names.
+* `#` links → replace with Spotify, Apple Music, Gaana, JioSaavn, etc.
+
+## ➕ How to Add More Releases
+
+Copy any complete `<div class="card"> ... </div>` block and paste it below the last release card.
+
+## 🔗 Update Navigation
+
+In `index.html`, ensure the menu contains:
+
+```html
+<a href="releases.html">Releases</a>
+```
+
+## 🚀 Upload to GitHub
+
+1. Create `releases.html`
+2. Paste this code
+3. Upload release images
+4. Commit changes
