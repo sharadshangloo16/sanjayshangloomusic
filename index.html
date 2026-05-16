@@ -5,44 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sanjay Shangloo | Official Website</title>
   <meta name="description" content="Official website of Sanjay Shangloo - Bhajan, Ghazal and Bollywood Classics Singer. Book live shows, corporate events, private concerts and devotional programs." />
- </html> 
-/* Musical Notes Background Animation */
-.music-background {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  overflow: hidden;
-  z-index: 0;
-}
-
-.note {
-  position: absolute;
-  top: -60px;
-  color: rgba(212, 175, 55, 0.18);
-  font-size: 34px;
-  animation: fall linear infinite;
-}
-
-@keyframes fall {
-  0% {
-    transform: translateY(-60px) rotate(0deg);
-    opacity: 0;
-  }
-  10% {
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(110vh) rotate(360deg);
-    opacity: 0;
-  }
-}
-
-/* Keep site content above the animation */
-header,
-main,
-footer {
-  position: relative;
-  z-index: 1;
 }<style>
     :root {
       --bg: #0a0a0a;
