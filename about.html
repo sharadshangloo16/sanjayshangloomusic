@@ -51,26 +51,45 @@
   display: none;
 }
     .logo span { color: var(--gold); }
-    .menu {
+.menu {
   display: flex;
-  gap: 30px;
-  font-size: 18px;
-  font-weight: 600;
   justify-content: center;
   align-items: center;
-  flex: 1;
+  gap: 28px;
+  width: 100%;
+  font-size: 18px;
+  font-weight: 600;
+  flex-wrap: wrap;
+  text-align: center;
 }
-    .menu a {
-  color: #ffffff;
-  padding: 8px 12px;
-  border-radius: 8px;
-  transition: all 0.3s ease;
+
+.menu a {
+  position: relative;
+  color: var(--text);
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
 
 .menu a:hover,
 .menu a.active {
-  color: #f7d774;
-  background: rgba(212, 175, 55, 0.12);
+  color: var(--gold-2);
+}
+
+/* Golden underline animation */
+.menu a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: var(--gold-2);
+  transition: width 0.3s ease;
+}
+
+.menu a:hover::after,
+.menu a.active::after {
+  width: 100%;
 }
 
     .hero {
