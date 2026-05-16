@@ -475,18 +475,18 @@ nav {
       color: var(--muted);
       text-align: center;
     }
+     @media (max-width: 900px) {
+  .hero,
+  .grid-3,
+  .stats,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
 
-    @media (max-width: 900px) {
-      .hero,
-      .grid-3,
-      .stats,
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .menu { display: none; }
-
-      .artist-photo { height: 420px; }
+  .artist-photo {
+    height: 420px;
+  }
+}
  /* Floating Musical Notes Background */
 /* Floating Musical Notes Background */
 .music-background {
