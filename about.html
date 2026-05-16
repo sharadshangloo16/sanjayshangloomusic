@@ -548,22 +548,46 @@
     © 2026 Sanjay Shangloo. All Rights Reserved.
   </div>
 </footer>
-  <script>
+ <script>
 document.addEventListener("DOMContentLoaded", function () {
   const gallery = document.querySelector(".gallery-track");
+  if (!gallery) return;
+
   const images = gallery.querySelectorAll("img");
+  if (!images.length) return;
 
   let currentIndex = 0;
+  let sliderStarted = false;
+  let intervalId = null;
 
-  setInterval(() => {
-    currentIndex = (currentIndex + 1) % images.length;
+  function startGallerySlider() {
+    if (sliderStarted) return;
+    sliderStarted = true;
 
-    images[currentIndex].scrollIntoView({
-      behavior: "smooth",
-      inline: "start",
-      block: "nearest"
-    });
-  }, 5000);
+    intervalId = setInterval(() => {
+      currentIndex = (currentIndex + 1) % images.length;
+
+      images[currentIndex].scrollIntoView({
+        behavior: "smooth",
+        inline: "start",
+        block: "nearest"
+      });
+    }, 5000);
+  }
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      if (entries[0].isIntersecting) {
+        startGallerySlider();
+        observer.disconnect();
+      }
+    },
+    {
+      threshold: 0.4
+    }
+  );
+
+  observer.observe(gallery);
 });
 </script>
 </body>
