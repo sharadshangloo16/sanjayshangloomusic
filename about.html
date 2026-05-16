@@ -325,21 +325,23 @@
   }
 
   .mobile-menu {
-    display: block;
-    position: relative;
-  }
+  display: block;
+  position: relative;
+  margin-right: auto;
+  margin-left: 0;
+}
 
   #menu-toggle {
     display: none;
   }
 
   .hamburger {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
-    padding: 10px;
-  }
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+  padding: 10px 8px;
+}
 
   .hamburger span {
     width: 28px;
@@ -353,7 +355,8 @@
     display: none;
     position: absolute;
     top: 52px;
-    right: 0;
+    left: 0;
+    right: auto;
     width: 240px;
     background: rgba(10,10,10,0.97);
     border: 1px solid rgba(255,255,255,0.12);
