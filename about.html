@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | Sanjay Shangloo</title>
+  <meta name="description" content="Learn more about Sanjay Shangloo - singer, music director, lyricist and founder of Sa Re Gao Re Records." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --card: rgba(255,255,255,0.06);
+      --text: #ffffff;
+      --muted: #c7c7c7;
+      --gold: #d4af37;
+      --gold-2: #f7d774;
+      --border: rgba(255,255,255,0.12);
+      --shadow: 0 20px 60px rgba(0,0,0,0.45);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(212,175,55,0.15), transparent 35%),
+        radial-gradient(circle at top left, rgba(212,175,55,0.08), transparent 30%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.8;
+    }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(1100px, calc(100% - 40px)); margin: 0 auto; }
+    header {
+      position: sticky; top: 0; z-index: 100;
+      backdrop-filter: blur(10px);
+      background: rgba(10,10,10,0.88);
+      border-bottom: 1px solid var(--border);
+    }
+    nav {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 16px 0;
+    }
+    .logo { font-weight: 700; font-size: 20px; }
+    .logo span { color: var(--gold); }
+    .menu { display: flex; gap: 24px; flex-wrap: wrap; font-size: 14px; }
+    .menu a.active { color: var(--gold-2); }
+
+    .hero {
+      padding: 80px 0 50px;
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+    .artist-photo {
+      width: 100%; height: 620px; object-fit: cover;
+      border-radius: 24px; display: block;
+    }
+    .badge {
+      display: inline-block;
+      padding: 8px 14px;
+      border: 1px solid rgba(212,175,55,0.35);
+      border-radius: 999px;
+      background: rgba(212,175,55,0.08);
+      color: var(--gold-2);
+      font-size: 13px;
+      margin-bottom: 18px;
+    }
+    h1, h2 {
+      font-family: 'Cormorant Garamond', serif;
+      letter-spacing: -0.5px;
+    }
+    h1 {
+      margin: 0 0 14px;
+      font-size: clamp(48px, 7vw, 84px);
+      line-height: 0.95;
+    }
+    .subtitle {
+      color: var(--gold-2);
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+    .lead, .content p { color: var(--muted); font-size: 17px; }
+
+    .section {
+      padding: 30px 0;
+    }
+    .section-title {
+      font-size: 54px;
+      margin-bottom: 14px;
+      color: var(--text);
+    }
+    .content {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 40px;
+      box-shadow: var(--shadow);
+    }
+    .content h3 {
+      color: var(--gold-2);
+      margin-top: 34px;
+      margin-bottom: 10px;
+      font-size: 24px;
+    }
+    .content ul {
+      color: var(--muted);
+      padding-left: 22px;
+    }
+    .content li { margin-bottom: 8px; }
+
+    .gallery-section { padding: 40px 0 80px; }
+    .gallery-track {
+      display: flex;
+      gap: 20px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      padding-bottom: 10px;
+    }
+    .gallery-track::-webkit-scrollbar { height: 8px; }
+    .gallery-track::-webkit-scrollbar-thumb {
+      background: rgba(212,175,55,0.5);
+      border-radius: 999px;
+    }
+    .gallery-track img {
+      width: 320px;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      scroll-snap-align: start;
+      flex-shrink: 0;
+      box-shadow: var(--shadow);
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 30px 0 60px;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; }
+      .artist-photo { height: 420px; }
+      .content { padding: 24px; }
+      .section-title { font-size: 40px; }
+      .gallery-track img { width: 280px; height: 190px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">Sanjay <span>Shangloo</span></div>
+        <div class="menu">
+          <a href="index.html">Home</a>
+          <a href="about.html" class="active">About</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="videos.html">Videos</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <div class="card">
+        <img src="artist.jpg" alt="Sanjay Shangloo" class="artist-photo">
+      </div>
+      <div>
+        <div class="badge">Official Biography</div>
+        <h1>Sanjay Shangloo</h1>
+        <div class="subtitle">Singer • Music Director • Lyricist • Founder of Sa Re Gao Re Records</div>
+        <p class="lead">
+          A renowned Indian singer and disciple of Anup Jalota, Sanjay Shangloo is celebrated for soulful bhajans, ghazals, Sufi music and Bollywood melodies.
+        </p>
+        <p class="lead">
+          With releases on major labels and performances across India and worldwide, he continues to inspire audiences while nurturing emerging talent.
+        </p>
+      </div>
+    </section>
+
+    <section class="section container">
+      <h2 class="section-title">About Sanjay Shangloo</h2>
+      <div class="content">
+        <p>Sanjay Shangloo is a renowned Indian singer, music director, lyricist and music entrepreneur based in Mumbai, India. Known for his soulful voice, classical training and emotionally rich performances, he has established a distinctive identity in the Indian music industry.</p>
+
+        <h3>Disciple of Anup Jalota</h3>
+        <p>A dedicated disciple of Bhajan Samrat Anup Jalota, Sanjay Shangloo has inherited a deep understanding of Indian classical music and devotional expression. He has also shared the stage with his mentor at numerous prestigious events.</p>
+
+        <h3>Professional Career</h3>
+        <p>Sanjay has built a successful career as a singer, music director, lyricist, composer, live performer, music producer and mentor. His versatile repertoire includes Bhajans, Ghazals, Sufi music, devotional songs and Bollywood melodies.</p>
+
+        <h3>Major Music Labels</h3>
+        <ul>
+          <li>T-Series</li>
+          <li>Ultra Music</li>
+          <li>N.A. Classical Awaaz Music</li>
+          <li>Sanjay Shangloo Music</li>
+          <li>Sa Re Gao Re Records</li>
+        </ul>
+
+        <h3>Founder of Sa Re Gao Re Records</h3>
+        <p>Sanjay Shangloo is the founder of Sa Re Gao Re Records, an independent music label dedicated to discovering and promoting singers, lyricists, composers and independent artists.</p>
+
+        <h3>Live Show Performances</h3>
+        <p>He is available for corporate events, weddings, devotional programs, cultural festivals, Bhajan Sandhya, Jagran, Ghazal Nights and private concerts across India and internationally.</p>
+
+        <h3>Digital Presence</h3>
+        <p>With over 100,000 followers on Facebook and a growing audience on Instagram and YouTube, Sanjay Shangloo continues to connect with music lovers worldwide.</p>
+
+        <h3>Musical Philosophy</h3>
+        <p><em>“Music has the power to touch the soul, inspire the heart, and connect people beyond all boundaries.”</em></p>
+
+        <h3>Why Audiences Love Sanjay Shangloo</h3>
+        <ul>
+          <li>Soulful and expressive voice</li>
+          <li>Strong classical foundation</li>
+          <li>Professional stage presence</li>
+          <li>Versatility across genres</li>
+          <li>Original compositions</li>
+          <li>Devotional depth</li>
+          <li>Commitment to nurturing new talent</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="gallery-section container">
+      <h2 class="section-title">Performance Gallery</h2>
+      <div class="gallery-track">
+        <img src="gallery1.jpg" alt="Live Performance 1">
+        <img src="gallery2.jpg" alt="Live Performance 2">
+        <img src="gallery3.jpg" alt="Live Performance 3">
+        <img src="gallery4.jpg" alt="Live Performance 4">
+        <img src="gallery5.jpg" alt="Live Performance 5">
+      </div>
+      <p class="lead" style="margin-top: 16px;">Add your show photos as gallery1.jpg, gallery2.jpg, gallery3.jpg, gallery4.jpg and gallery5.jpg in your GitHub repository.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© 2026 Sanjay Shangloo. All Rights Reserved.</div>
+  </footer>
+</body>
+</html>
