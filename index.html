@@ -5,6 +5,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sanjay Shangloo | Official Website</title>
   <meta name="description" content="Official website of Sanjay Shangloo - Bhajan, Ghazal and Bollywood Classics Singer. Book live shows, corporate events, private concerts and devotional programs." />
+  /* Musical Notes Background Animation */
+.music-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.note {
+  position: absolute;
+  top: -50px;
+  color: rgba(212, 175, 55, 0.18);
+  font-size: 30px;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-50px) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
   <style>
     :root {
       --bg: #0a0a0a;
@@ -20,7 +53,18 @@
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
 
-    body {
+    body <div class="music-background">
+  <span class="note" style="left: 5%; animation-duration: 14s; animation-delay: 0s;">♪</span>
+  <span class="note" style="left: 15%; animation-duration: 18s; animation-delay: 2s;">♫</span>
+  <span class="note" style="left: 25%; animation-duration: 16s; animation-delay: 4s;">♬</span>
+  <span class="note" style="left: 35%; animation-duration: 20s; animation-delay: 1s;">♩</span>
+  <span class="note" style="left: 45%; animation-duration: 15s; animation-delay: 3s;">♪</span>
+  <span class="note" style="left: 55%; animation-duration: 19s; animation-delay: 5s;">♫</span>
+  <span class="note" style="left: 65%; animation-duration: 17s; animation-delay: 2s;">♬</span>
+  <span class="note" style="left: 75%; animation-duration: 21s; animation-delay: 4s;">♩</span>
+  <span class="note" style="left: 85%; animation-duration: 16s; animation-delay: 1s;">♪</span>
+  <span class="note" style="left: 95%; animation-duration: 18s; animation-delay: 6s;">♫</span>
+</div>{
       margin: 0;
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
       background:
