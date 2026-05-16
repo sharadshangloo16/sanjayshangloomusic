@@ -102,21 +102,36 @@
 }
 
   .mobile-menu {
-    display: block;
-    position: relative;
-  }
+  display: block;
+  position: relative;
+  margin-left: 0;
+}
+
+nav {
+  justify-content: flex-start !important;
+  align-items: center;
+  position: relative;
+  padding-left: 0;
+}
+
+.container {
+  width: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+}
 
   #menu-toggle {
     display: none;
   }
 
-  .hamburger {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
-    padding: 10px;
-  }
+  ..hamburger {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 10px;
+  margin-left: 0;
+}
 
   .hamburger span {
     width: 28px;
