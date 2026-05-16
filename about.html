@@ -217,25 +217,35 @@
 
 @media (max-width: 900px) {
   nav {
+    display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     gap: 12px;
+  }
+
+  .logo {
+    margin-bottom: 8px;
+    text-align: center;
   }
 
   .menu {
     display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: 10px 16px;
+    gap: 10px 14px;
     width: 100%;
     text-align: center;
     font-size: 14px;
   }
 
   .menu a {
-    display: inline-block;
+    display: inline-block !important;
     padding: 6px 8px;
+    white-space: nowrap;
   }
 
   .hero {
