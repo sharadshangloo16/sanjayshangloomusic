@@ -172,16 +172,16 @@
     }
 
     .release-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
-    }
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
 
     .card {
       background: var(--card);
       border: 1px solid var(--border);
       border-radius: 28px;
-      padding: 22px;
+      padding: 18px;
       box-shadow: var(--shadow);
       transition: transform 0.3s ease;
     }
@@ -218,13 +218,11 @@
     }
 
     .btn {
-      display: inline-block;
-      padding: 10px 18px;
-      border-radius: 999px;
-      font-weight: 700;
-      font-size: 14px;
-      transition: 0.25s ease;
-    }
+      .buttons {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
 
     .btn-primary {
       background: linear-gradient(135deg, var(--gold), #f8e38d);
