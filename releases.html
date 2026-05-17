@@ -171,9 +171,9 @@
       padding: 20px 0 80px;
     }
 
-    .release-grid {
+  .release-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
 }
 
@@ -422,7 +422,9 @@
      target="_blank"
      class="btn btn-secondary"
      title="JioSaavn">
-    <img src="jiosaavn.png" alt="JioSaavn" style="width: 16px; height: 16px; object-fit: contain;">
+    <img src="jiosaavn.png"
+     alt="JioSaavn"
+     style="width: 20px; height: 20px; object-fit: contain;">
   </a>
 
   <!-- Amazon Music -->
