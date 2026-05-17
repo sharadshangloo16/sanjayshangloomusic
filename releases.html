@@ -217,11 +217,22 @@
       flex-wrap: wrap;
     }
 
-    .btn {
-      .buttons {
+    .buttons {
   display: flex;
   gap: 8px;
   flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  border-radius: 50%;
+  font-size: 14px;
+  transition: 0.25s ease;
 }
 
     .btn-primary {
@@ -242,10 +253,72 @@
       text-align: center;
     }
 
-    .menu {
-  display: none !important;
-}
+   @media (max-width: 900px) {
+  .release-grid {
+    grid-template-columns: 1fr !important;
+  }
 
+  .menu {
+    display: none !important;
+  }
+  nav {
+    justify-content: flex-start !important;
+  }
+
+  #menu-toggle {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    cursor: pointer;
+    padding: 10px;
+  }
+
+  .hamburger span {
+    width: 25px;
+    height: 3px;
+    background: var(--gold-2);
+    border-radius: 3px;
+    display: block;
+  }
+
+  .mobile-menu-links {
+    display: none;
+    position: absolute;
+    top: 52px;
+    left: 0;
+    width: 240px;
+    background: rgba(10,10,10,0.97);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 10px;
+    box-shadow: var(--shadow);
+    z-index: 999;
+  }
+
+  .mobile-menu-links a {
+    display: block;
+    padding: 12px 14px;
+    border-radius: 8px;
+  }
+
+  .mobile-menu-links a:hover,
+  .mobile-menu-links a.active {
+    background: rgba(212,175,55,0.12);
+    color: var(--gold-2);
+  }
+
+  #menu-toggle:checked + .hamburger + .mobile-menu-links {
+    display: block;
+  }
+
+  .note {
+    font-size: 40px;
+  }
+}
 .mobile-menu {
   display: block !important;
   position: relative;
@@ -466,10 +539,11 @@ nav {
   <a href="https://www.jiosaavn.com/song/hanuman-chalisa/PgIdXjtdf3Y"
      target="_blank"
      class="btn btn-secondary"
-     title="JioSaavn">
-    <i class="fas fa-music"></i>
+      title="JioSaavn">
+      <img src="jiosaavn.png"
+     alt="JioSaavn"
+     style="width: 24px; height: 24px; object-fit: contain;">
   </a>
-
   <!-- Amazon Music -->
   <a href="https://music.amazon.in/albums/B0GW9M4LKX?marketplaceId=A21TJRUUN4KGV&musicTerritory=IN&ref=dm_sh_ngEcew63soIUWHNFfBc3yRCjz"
      target="_blank"
@@ -516,8 +590,10 @@ nav {
   <a href="https://www.jiosaavn.com/song/prabhu-ram-aa-gaye/Gzw9bkUEenA"
      target="_blank"
      class="btn btn-secondary"
-     title="JioSaavn">
-    <i class="fas fa-music"></i>
+      title="JioSaavn">
+      <img src="jiosaavn.png"
+     alt="JioSaavn"
+     style="width: 24px; height: 24px; object-fit: contain;">
   </a>
 
   <!-- Amazon Music -->
@@ -566,10 +642,11 @@ nav {
   <a href="https://www.jiosaavn.com/song/prabhu-ram-aa-gaye/Gzw9bkUEenA"
      target="_blank"
      class="btn btn-secondary"
-     title="JioSaavn">
-    <i class="fas fa-music"></i>
+      title="JioSaavn">
+      <img src="jiosaavn.png"
+     alt="JioSaavn"
+     style="width: 24px; height: 24px; object-fit: contain;">
   </a>
-
   <!-- Amazon Music -->
   <a href="https://music.amazon.in/albums/B0GV2CRWZS?marketplaceId=A21TJRUUN4KGV&musicTerritory=IN&ref=dm_sh_dsceAdSzdTusRibF0g7gXc5mc"
      target="_blank"
