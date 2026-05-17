@@ -241,22 +241,80 @@
     }
 
     @media (max-width: 900px) {
-      .release-grid {
-        grid-template-columns: 1fr;
-      }
+  .release-grid {
+    grid-template-columns: 1fr;
+  }
 
-      .menu {
-        gap: 14px;
-      }
+  /* Hide desktop menu */
+  .menu {
+    display: none !important;
+  }
 
-      .menu a {
-        font-size: 14px;
-      }
+  /* Show mobile hamburger */
+  .mobile-menu {
+    display: block;
+    position: relative;
+    width: 100%;
+  }
 
-      .note {
-        font-size: 40px;
-      }
-    }
+  nav {
+    justify-content: flex-start;
+  }
+
+  #menu-toggle {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    cursor: pointer;
+    padding: 10px;
+  }
+
+  .hamburger span {
+    width: 25px;
+    height: 3px;
+    background: var(--gold-2);
+    border-radius: 3px;
+    display: block;
+  }
+
+  .mobile-menu-links {
+    display: none;
+    position: absolute;
+    top: 52px;
+    left: 0;
+    width: 240px;
+    background: rgba(10,10,10,0.97);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 10px;
+    box-shadow: var(--shadow);
+    z-index: 999;
+  }
+
+  .mobile-menu-links a {
+    display: block;
+    padding: 12px 14px;
+    border-radius: 8px;
+  }
+
+  .mobile-menu-links a:hover,
+  .mobile-menu-links a.active {
+    background: rgba(212,175,55,0.12);
+    color: var(--gold-2);
+  }
+
+  #menu-toggle:checked + .hamburger + .mobile-menu-links {
+    display: block;
+  }
+
+  .note {
+    font-size: 40px;
+  }
+}
   </style>
 </head>
 <body>
@@ -278,16 +336,37 @@
   <header>
     <div class="container">
       <nav>
-        <div class="menu">
-          <a href="index.html">Home</a>
-          <a href="releases.html" class="active">Releases</a>
-          <a href="gallery.html">Gallery</a>
-          <a href="videos.html">Videos</a>
-          <a href="#booking">Book Shows</a>
-          <a href="about.html">About</a>
-          <a href="contact.html">Contact</a>
-        </div>
-      </nav>
+  <!-- Desktop Menu -->
+  <div class="menu">
+    <a href="index.html">Home</a>
+    <a href="releases.html" class="active">Releases</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="videos.html">Videos</a>
+    <a href="#booking">Book Shows</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <!-- Mobile Hamburger -->
+  <div class="mobile-menu">
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+
+    <div class="mobile-menu-links">
+      <a href="index.html">Home</a>
+      <a href="releases.html" class="active">Releases</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="videos.html">Videos</a>
+      <a href="#booking">Book Shows</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+</nav>
     </div>
   </header>
 
@@ -396,7 +475,7 @@
   </a>
 
   <!-- Amazon Music -->
-  <a href="hhttps://music.amazon.in/albums/B0GW9M4LKX?marketplaceId=A21TJRUUN4KGV&musicTerritory=IN&ref=dm_sh_9lbHyoa6u98FRRNKJBtBnZmWc"
+  <a href="https://music.amazon.in/albums/B0GW9M4LKX?marketplaceId=A21TJRUUN4KGV&musicTerritory=IN&ref=dm_sh_9lbHyoa6u98FRRNKJBtBnZmWc"
      target="_blank"
      class="btn btn-secondary"
      title="Amazon Music">
