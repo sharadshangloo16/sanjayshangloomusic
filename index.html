@@ -92,9 +92,22 @@
 
 /* Mobile Hamburger Menu */
 @media (max-width: 900px) {
-  .menu {
-    display: none !important;
+  .hero,
+  .grid-3,
+  .stats,
+  .contact-grid {
+    grid-template-columns: 1fr;
   }
+
+  .artist-photo {
+    height: 420px;
+  }
+
+  .hero .card {
+    order: -1;
+    margin-bottom: 20px;
+  }
+}
 
   nav {
     justify-content: flex-start;
@@ -512,11 +525,6 @@ nav {
   .artist-photo {
     height: 420px;
   }
-}
-   .hero .card {
-  order: -1;
-  margin-bottom: 20px;
-}
  /* Floating Musical Notes Background */
 /* Floating Musical Notes Background */
 .music-background {
