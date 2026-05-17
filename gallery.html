@@ -299,24 +299,55 @@ nav a:hover::after {
   </style>
 </head>
 <body>
+  <div class="music-background">
+  <span class="note" style="left: 5%; animation-duration: 12s;">♪</span>
+  <span class="note" style="left: 15%; animation-duration: 18s; animation-delay: 2s;">♫</span>
+  <span class="note" style="left: 25%; animation-duration: 15s; animation-delay: 4s;">♬</span>
+  <span class="note" style="left: 35%; animation-duration: 20s; animation-delay: 1s;">♩</span>
+  <span class="note" style="left: 45%; animation-duration: 14s; animation-delay: 3s;">♪</span>
+  <span class="note" style="left: 55%; animation-duration: 17s; animation-delay: 5s;">♫</span>
+  <span class="note" style="left: 65%; animation-duration: 13s; animation-delay: 2s;">♬</span>
+  <span class="note" style="left: 75%; animation-duration: 19s; animation-delay: 4s;">♩</span>
+  <span class="note" style="left: 85%; animation-duration: 16s; animation-delay: 1s;">♪</span>
+  <span class="note" style="left: 95%; animation-duration: 18s; animation-delay: 6s;">♫</span>
+</div>
 
   <header>
-    <div class="container">
-      <div class="nav-wrap">
-        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+  <div class="container">
+    <nav>
 
-        <nav id="mainNav">
+      <!-- Desktop Menu -->
+      <div class="menu">
+        <a href="index.html">Home</a>
+        <a href="releases.html">Release</a>
+        <a href="gallery.html" class="active">Gallery</a>
+        <a href="videos.html">Videos</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
+      <!-- Mobile Hamburger -->
+      <div class="mobile-menu">
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+
+        <div class="mobile-menu-links">
           <a href="index.html">Home</a>
           <a href="releases.html">Release</a>
           <a href="gallery.html" class="active">Gallery</a>
           <a href="videos.html">Videos</a>
           <a href="about.html">About</a>
           <a href="contact.html">Contact</a>
-        </nav>
+        </div>
       </div>
-    </div>
-  </header>
 
+    </nav>
+  </div>
+</header>
   <main>
     <section class="hero">
       <div class="container">
@@ -437,13 +468,6 @@ nav a:hover::after {
       © 2026 Sanjay Shangloo. All Rights Reserved.
     </div>
   </footer>
-
-  <script>
-    function toggleMenu() {
-      document.getElementById('mainNav').classList.toggle('open');
-    }
-  </script>
-
   <script async src="https://www.instagram.com/embed.js"></script>
 
 </body>
