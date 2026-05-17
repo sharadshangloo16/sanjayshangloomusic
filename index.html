@@ -291,7 +291,75 @@ footer {
   color: var(--muted);
   text-align: center;
 }
+    /* Reviews Section */
+.reviews-section {
+  padding: 80px 20px;
+  text-align: center;
+}
+    /* Reviews Section */
+.reviews-section {
+  padding: 80px 20px;
+  text-align: center;
+}
 
+.reviews-section h2 {
+  font-size: 42px;
+  color: var(--gold-2);
+  margin-bottom: 40px;
+}
+
+.review-slider {
+  max-width: 900px;
+  margin: 0 auto 30px;
+  overflow: hidden;
+}
+
+.review-track {
+  display: flex;
+  width: 400%;
+  animation: reviewSlide 40s infinite;
+}
+
+.review-card {
+  min-width: 100%;
+  padding: 30px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+}
+
+.review-card p {
+  font-size: 20px;
+  line-height: 1.8;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.review-card span {
+  color: var(--gold-2);
+  font-weight: 600;
+}
+
+.stars {
+  font-size: 24px;
+  color: #ffd700;
+  margin-bottom: 15px;
+}
+
+@keyframes reviewSlide {
+  0%, 20%   { transform: translateX(0); }
+  25%, 45%  { transform: translateX(-100%); }
+  50%, 70%  { transform: translateX(-200%); }
+  75%, 95%  { transform: translateX(-300%); }
+  100%      { transform: translateX(0); }
+}
+@keyframes reviewSlide {
+  0%, 20%   { transform: translateX(0); }
+  25%, 45%  { transform: translateX(-100%); }
+  50%, 70%  { transform: translateX(-200%); }
+  75%, 95%  { transform: translateX(-300%); }
+  100%      { transform: translateX(0); }
+}
 /* Mobile */
 @media (max-width: 900px) {
   .menu {
