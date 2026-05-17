@@ -90,7 +90,6 @@
   display: none;
 }
 
-/* Mobile Hamburger Menu */
 @media (max-width: 900px) {
   .hero,
   .grid-3,
@@ -101,23 +100,27 @@
 
   .artist-photo {
     height: 420px;
+    object-position: center top;
   }
 
   .hero .card {
     order: -1;
     margin-bottom: 20px;
   }
-}
 
-  nav {
-    justify-content: flex-start;
-    position: relative;
-}
+  /* Hide desktop menu on mobile */
+  .menu {
+    display: none !important;
+  }
 
-  .mobile-menu {
-  display: block;
-  position: relative;
-  margin-left: 0;
+  /* Show hamburger button */
+  .menu-toggle {
+    display: block !important;
+    font-size: 34px;
+    color: #f7d774;
+    cursor: pointer;
+    margin-left: 0;
+  }
 }
 
 nav {
