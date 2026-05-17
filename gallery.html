@@ -1,4 +1,285 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery | Sanjay Shangloo</title>
+  <meta name="description" content="Live performance photos, event highlights and memorable moments of Sanjay Shangloo." />
+
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --card: rgba(255,255,255,0.06);
+      --text: #ffffff;
+      --muted: #c7c7c7;
+      --gold: #d4af37;
+      --gold-2: #f7d774;
+      --border: rgba(255,255,255,0.12);
+      --shadow: 0 20px 60px rgba(0,0,0,0.45);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(10px);
+      background: rgba(10,10,10,0.85);
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      padding: 16px 0;
+      gap: 28px;
+      flex-wrap: wrap;
+      font-weight: 600;
+    }
+
+    nav a.active,
+    nav a:hover {
+      color: var(--gold-2);
+    }
+
+    .hero {
+      padding: 80px 0 40px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      margin: 0;
+      font-size: clamp(40px, 7vw, 72px);
+    }
+
+    .hero p {
+      color: var(--muted);
+      max-width: 760px;
+      margin: 18px auto 0;
+    }
+
+    section {
+      padding: 30px 0 70px;
+    }
+
+    .section-title {
+      font-size: 36px;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .section-text {
+      color: var(--muted);
+      text-align: center;
+      max-width: 780px;
+      margin: 0 auto 30px;
+    }
+
+    /* Manual Gallery Grid */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .gallery-item {
+      display: block;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      background: var(--card);
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-4px);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Social Slider */
+    .social-slider {
+      overflow: hidden;
+      border-radius: 24px;
+      border: 1px solid var(--border);
+      background: var(--card);
+      padding: 20px 0;
+    }
+
+    .social-track {
+      display: flex;
+      gap: 20px;
+      width: max-content;
+      animation: scrollGallery 35s linear infinite;
+    }
+
+    .social-track:hover {
+      animation-play-state: paused;
+    }
+
+    .social-card {
+      flex: 0 0 280px;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.04);
+    }
+
+    .social-card img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .social-card p {
+      margin: 0;
+      padding: 12px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @keyframes scrollGallery {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    /* Buttons */
+    .buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 24px;
+      border-radius: 999px;
+      font-weight: 700;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--gold), #f8e38d);
+      color: #111;
+    }
+
+    .btn-secondary {
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.04);
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 30px 0 60px;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    /* Mobile */
+    @media (max-width: 900px) {
+      nav {
+        gap: 16px;
+        font-size: 14px;
+      }
+
+      .gallery-item img,
+      .social-card img {
+        height: 240px;
+      }
+
+      .section-title {
+        font-size: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="releases.html">Release</a>
+        <a href="gallery.html" class="active">Gallery</a>
+        <a href="videos.html">Videos</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h1>Gallery</h1>
+        <p>
+          Explore live performances, spiritual events, studio sessions and memorable moments from Sanjay Shangloo's musical journey.
+        </p>
+      </div>
+    </section>
+
+    <!-- Manual Gallery Section -->
+    <section>
+      <div class="container">
+        <h2 class="section-title">Featured Photos</h2>
+        <p class="section-text">
+          You can manually add as many images as you like by duplicating the image blocks below.
+        </p>
+
+        <div class="gallery-grid">
+          <a href="gallery1.jpg" class="gallery-item" target="_blank">
+            <img src="gallery1.jpg" alt="Live Performance" />
+          </a>
+
+          <a href="gallery2.jpg" class="gallery-item" target="_blank">
+            <img src="gallery2.jpg" alt="Bhajan Sandhya" />
+          </a>
+
+          <a href="gallery3.jpg" class="gallery-item" target="_blank">
+            <img src="gallery3.jpg" alt="Studio Session" />
+          </a>
+
+          <a href="gallery4.jpg" class="gallery-item" target="_blank">
+            <img src="gallery4.jpg" alt="Event Performance" />
+          </a>
+
+          <a href="gallery5.jpg" class="gallery-item" target="_blank">
+            <img src="gallery5.jpg" alt="With Anup Jalota" />
+          </a>
+
+          <a href="gallery6.jpg" class="gallery-item" target="_blank">
+            <img src="gallery6.jpg" alt="Concert Highlights" />
+          </a>
+        </div>
+      </div>
     </section>
 
     <!-- Social Feed Style Slider -->
@@ -6,42 +287,35 @@
       <div class="container">
         <h2 class="section-title">Social Highlights</h2>
         <p class="section-text">
-          
+          Add your best Facebook and Instagram photos here. They will auto-scroll continuously.
         </p>
 
         <div class="social-slider">
           <div class="social-track">
             <!-- First Set -->
             <div class="social-card">
-  <a href="https://www.instagram.com/p/YOUR_POST_LINK/" target="_blank">
-    <img src="https://www.instagram.com/p/DYQ82NTk5FI/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" alt="Instagram Highlight">
-  </a>
-  <p>Instagram Highlight</p>
-</div>
+              <img src="social1.jpg" alt="Instagram Highlight" />
+              <p>Instagram Highlight</p>
+            </div>
 
             <div class="social-card">
-  <a href="https://www.instagram.com/p/YOUR_POST_LINK/" target="_blank">
-    <img src="https://www.instagram.com/p/DYQ82NTk5FI/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" alt="Instagram Highlight">
-  </a>
-  <p>Instagram Highlight</p>
-</div>
-            <div class="social-card">
-  <a href="https://www.instagram.com/p/YOUR_POST_LINK/" target="_blank">
-    <img src="https://www.instagram.com/p/DYQ82NTk5FI/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" alt="Instagram Highlight">
-  </a>
-  <p>Instagram Highlight</p>
-</div>
+              <img src="social2.jpg" alt="Facebook Highlight" />
+              <p>Facebook Highlight</p>
+            </div>
 
             <div class="social-card">
-  <a href="https://www.instagram.com/p/YOUR_POST_LINK/" target="_blank">
-    <img src="https://www.instagram.com/p/DYQ82NTk5FI/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" alt="Instagram Highlight">
-  </a>
-  <p>Instagram Highlight</p>
-</div>
+              <img src="social3.jpg" alt="Live Event" />
+              <p>Live Event</p>
+            </div>
+
+            <div class="social-card">
+              <img src="social4.jpg" alt="Stage Performance" />
+              <p>Stage Performance</p>
+            </div>
 
             <!-- Duplicate Set for Infinite Scroll -->
             <div class="social-card">
-              <img src="https://via.placeholder.com/600x600?text=Instagram+Photo" alt="Instagram Highlight">
+              <img src="social1.jpg" alt="Instagram Highlight" />
               <p>Instagram Highlight</p>
             </div>
 
