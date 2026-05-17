@@ -51,22 +51,25 @@
     }
 
     .nav-wrap {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 16px 0;
-    }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 16px 0;
+}
 
     .menu-toggle {
-      display: none;
-      background: transparent;
-      border: 1px solid var(--border);
-      color: var(--text);
-      font-size: 26px;
-      padding: 6px 12px;
-      border-radius: 12px;
-      cursor: pointer;
-    }
+  display: none;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-size: 26px;
+  padding: 6px 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  position: absolute;
+  left: 0;
+}
 
     nav {
       display: flex;
@@ -329,67 +332,49 @@
         <div class="social-slider">
           <div class="social-track">
 
-            <!-- Instagram Post 1 -->
-            <div class="social-card">
-              <blockquote
-                class="instagram-media"
-                data-instgrm-permalink="https://www.instagram.com/p/DYQ82NTk5FI/"
-                data-instgrm-version="14"
-                style="background:#ffffff; border:0; border-radius:12px; margin:0; width:100%;">
-              </blockquote>
-              <p>Instagram Highlight</p>
-            </div>
-            <div class="social-card">
-  <iframe
-    src="https://www.facebook.com/plugins/post.php?href=https://https://www.facebook.com/photo?fbid=1472169988031653&set=a.534545211794140
-    width="100%"
-    height="520"
-    style="border:none; overflow:hidden; border-radius:12px;"
-    scrolling="no"
-    frameborder="0"
-    allowfullscreen="true"
-    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
-  </iframe>
-  <p>Facebook Highlight</p>
-</div>
+  <!-- Instagram Post 1 -->
+  <div class="social-card">
+    <blockquote
+      class="instagram-media"
+      data-instgrm-permalink="https://www.instagram.com/p/DYQ82NTk5FI/"
+      data-instgrm-version="14"
+      style="background:#ffffff; border:0; border-radius:12px; margin:0; width:100%;">
+    </blockquote>
+    <p>Instagram Highlight</p>
+  </div>
 
-            <div class="social-card">
-  <iframe
-    src="https://www.facebook.com/plugins/post.php?href=https://https://www.facebook.com/photo?fbid=1472169988031653&set=a.534545211794140"
-    width="100%"
-    height="520"
-    style="border:none; overflow:hidden; border-radius:12px;"
-    scrolling="no"
-    frameborder="0"
-    allowfullscreen="true"
-    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
-  </iframe>
-  <p>Facebook Highlight</p>
-</div>
+  <!-- Facebook Highlight (Simple Clickable Card) -->
+  <div class="social-card">
+    <a href="https://www.facebook.com/sanjayshangloomusic" target="_blank">
+      <img src="gallery1.jpg" alt="Facebook Highlight" style="width:100%; border-radius:12px;">
+    </a>
+    <p>Facebook Highlight</p>
+  </div>
 
-            <!-- Duplicate for smooth scrolling -->
-            <div class="social-card">
-              <blockquote
-                class="instagram-media"
-                data-instgrm-permalink="https://www.instagram.com/p/DYJTdqRjAr7/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
-                data-instgrm-version="14"
-                style="background:#ffffff; border:0; border-radius:12px; margin:0; width:100%;">
-              </blockquote>
-              <p>Instagram Highlight</p>
-            </div>
-          
-            <!-- Duplicate for smooth scrolling -->
-            <div class="social-card">
-              <blockquote
-                class="instagram-media"
-                data-instgrm-permalink="https://www.instagram.com/reel/DX7Fhx_zc7x/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
-                data-instgrm-version="14"
-                style="background:#ffffff; border:0; border-radius:12px; margin:0; width:100%;">
-              </blockquote>
-              <p>Instagram Highlight</p>
-            </div>
-            </div>
-        </div>
+  <!-- Instagram Post 2 -->
+  <div class="social-card">
+    <blockquote
+      class="instagram-media"
+      data-instgrm-permalink="https://www.instagram.com/p/DYJTdqRjAr7/"
+      data-instgrm-version="14"
+      style="background:#ffffff; border:0; border-radius:12px; margin:0; width:100%;">
+    </blockquote>
+    <p>Instagram Highlight</p>
+  </div>
+
+  <!-- Instagram Reel -->
+  <div class="social-card">
+    <blockquote
+      class="instagram-media"
+      data-instgrm-permalink="https://www.instagram.com/reel/DX7Fhx_zc7x/"
+      data-instgrm-version="14"
+      style="background:#ffffff; border:0; border-radius:12px; margin:0; width:100%;">
+    </blockquote>
+    <p>Instagram Highlight</p>
+  </div>
+
+</div>
+</div>
 
         <div class="buttons">
           <a href="https://www.facebook.com/sanjayshangloomusic" target="_blank" class="btn btn-secondary">
