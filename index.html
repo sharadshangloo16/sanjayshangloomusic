@@ -312,7 +312,7 @@ footer {
 .review-track {
   display: flex;
   width: 400%;
-  animation: reviewSlide 40s infinite;
+  transition: transform 0.5s ease;
 }
 
 .review-card {
@@ -343,14 +343,6 @@ footer {
   font-size: 24px;
   color: #ffd700;
   margin-bottom: 15px;
-}
-
-@keyframes reviewSlide {
-  0%, 22%   { transform: translateX(0); }
-  25%, 47%  { transform: translateX(-100%); }
-  50%, 72%  { transform: translateX(-200%); }
-  75%, 97%  { transform: translateX(-300%); }
-  100%      { transform: translateX(0); }
 }
 /* Mobile */
 @media (max-width: 900px) {
@@ -615,42 +607,48 @@ footer {
       <h2>What People Say</h2>
 
       <div class="review-slider">
-        <div class="review-track">
+  <div class="review-track" id="reviewTrack">
 
-          <div class="review-card">
-            <div class="stars">★★★★★</div>
-            <p>"Sanjay Shangloo ji ki awaaz bahut hi soulful aur divine hai. Outstanding performance!"</p>
-            <span>- Rajesh Mehta</span>
-          </div>
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p>"Sanjay Shangloo ji ki awaaz bahut hi soulful aur divine hai. Outstanding performance!"</p>
+      <span>- Rajesh Mehta</span>
+    </div>
 
-          <div class="review-card">
-            <div class="stars">★★★★★</div>
-            <p>"A truly mesmerizing devotional experience. Highly recommended for live events."</p>
-            <span>- Priya Sharma</span>
-          </div>
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p>"A truly mesmerizing devotional experience. Highly recommended for live events."</p>
+      <span>- Priya Sharma</span>
+    </div>
 
-          <div class="review-card">
-            <div class="stars">★★★★★</div>
-            <p>"Professional artist with an incredible voice and spiritual presence."</p>
-            <span>- Amit Verma</span>
-          </div>
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p>"Professional artist with an incredible voice and spiritual presence."</p>
+      <span>- Amit Verma</span>
+    </div>
 
-          <div class="review-card">
-            <div class="stars">★★★★★</div>
-            <p>"One of the best devotional singers I have ever heard."</p>
-            <span>- Neha Gupta</span>
-          </div>
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p>"One of the best devotional singers I have ever heard."</p>
+      <span>- Neha Gupta</span>
+    </div>
 
-        </div>
-      </div>
+  </div>
+</div>
 
-      <a href="https://g.page/r/CUxQqLGVkoErEBM/review"
-         target="_blank"
-         rel="noopener"
-         class="btn btn-primary">
-        ⭐ View All Google Reviews
-      </a>
-    </section>
+<div class="buttons" style="justify-content: center; margin-top: 20px;">
+  <button class="btn btn-secondary" onclick="prevReview()">← Previous</button>
+  <button class="btn btn-primary" onclick="nextReview()">Next →</button>
+</div>
+
+<div class="buttons" style="justify-content: center; margin-top: 20px;">
+  <a href="https://g.page/r/CUxQqLGVkoErEBM/review"
+     target="_blank"
+     rel="noopener"
+     class="btn btn-primary">
+    ⭐ View All Google Reviews
+  </a>
+</div>
 
   </div>
 </section>
@@ -684,5 +682,24 @@ footer {
       © 2026 Sanjay Shangloo. All Rights Reserved.
     </div>
   </footer>
+  <script>
+let currentReview = 0;
+const totalReviews = 4;
+
+function updateReview() {
+  const track = document.getElementById('reviewTrack');
+  track.style.transform = `translateX(-${currentReview * 100}%)`;
+}
+
+function nextReview() {
+  currentReview = (currentReview + 1) % totalReviews;
+  updateReview();
+}
+
+function prevReview() {
+  currentReview = (currentReview - 1 + totalReviews) % totalReviews;
+  updateReview();
+}
+</script>
 </body>
 </html>
