@@ -83,88 +83,68 @@
       .note {
         font-size: 40px;
         color: rgba(247, 215, 116, 0.22);
-      }
-    }
-    /* Desktop */
+        /* Desktop */
 .mobile-menu {
   display: none;
 }
 
+/* Mobile layout */
 @media (max-width: 900px) {
-  .hero,
-  .grid-3,
-  .stats,
-  .contact-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .artist-photo {
-    height: 420px;
-    object-position: center top;
-  }
-
-  .hero .card {
-    order: -1;
-    margin-bottom: 20px;
-  }
-
-  /* Hide desktop menu on mobile */
+  /* Hide desktop menu */
   .menu {
     display: none !important;
   }
 
-  /* Show hamburger button */
-  .menu-toggle {
+  /* Show hamburger menu */
+  .mobile-menu {
     display: block !important;
-    font-size: 34px;
-    color: #f7d774;
-    cursor: pointer;
-    margin-left: 0;
+    position: relative;
   }
-}
 
-nav {
-  justify-content: flex-start !important;
-  align-items: center;
-  position: relative;
-  padding-left: 0;
-}
+  /* Move hamburger to left */
+  nav {
+    justify-content: flex-start !important;
+  }
 
-.container {
-  width: 100%;
-  padding-left: 10px;
-  padding-right: 10px;
-}
+  /* Container spacing */
+  .container {
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 
+  /* Hide checkbox */
   #menu-toggle {
     display: none;
   }
 
- .hamburger {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  cursor: pointer;
-  padding: 10px;
-  margin-left: 0;
-}
+  /* Hamburger icon */
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    cursor: pointer;
+    padding: 10px;
+    margin-left: 0;
+  }
 
   .hamburger span {
-  width: 25px;
-  height: 3px;
-  background: #f7d774;
-  border-radius: 3px;
-  display: block;
-  box-shadow: 0 0 6px rgba(247, 215, 116, 0.5);
-}
+    width: 25px;
+    height: 3px;
+    background: #f7d774;
+    border-radius: 3px;
+    display: block;
+    box-shadow: 0 0 6px rgba(247, 215, 116, 0.5);
+  }
 
+  /* Dropdown menu */
   .mobile-menu-links {
     display: none;
     position: absolute;
     top: 52px;
     left: 0;
     width: 240px;
-    background: rgba(10,10,10,0.97);
+    background: rgba(10, 10, 10, 0.97);
     border: 1px solid rgba(255,255,255,0.12);
     border-radius: 14px;
     padding: 10px;
@@ -186,17 +166,12 @@ nav {
     color: #f7d774;
   }
 
+  /* Open menu on click */
   #menu-toggle:checked + .hamburger + .mobile-menu-links {
     display: block;
   }
-}
-    @media (max-width: 900px) {
-  .hero {
-    display: flex;
-    flex-direction: column;
-  }
-  /* Image height mobile ke liye */
-  @media (max-width: 900px) {
+
+  /* Mobile hero layout */
   .hero,
   .grid-3,
   .stats,
