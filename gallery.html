@@ -1,77 +1,99 @@
 <!DOCTYPE html>
-        <h2 class="section-title">Social Highlights</h2>
-        <p class="section-text">
-          Add your best Facebook and Instagram photos here. They will auto-scroll continuously.
+
+    .btn {
+      display: inline-block;
+      padding: 14px 24px;
+      border-radius: 999px;
+      font-weight: 700;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--gold), #f8e38d);
+      color: #111;
+    }
+
+    .btn-secondary {
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 30px 0 60px;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    /* Mobile */
+    @media (max-width: 900px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      nav {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+        width: 100%;
+        padding-top: 16px;
+      }
+
+      nav.open {
+        display: flex;
+      }
+
+      .gallery-item img {
+        height: 240px;
+      }
+
+      .section-title {
+        font-size: 30px;
+      }
+
+      .social-card {
+        flex: 0 0 320px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <div class="nav-wrap">
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+        <nav id="mainNav">
+          <a href="index.html">Home</a>
+          <a href="releases.html">Release</a>
+          <a href="gallery.html" class="active">Gallery</a>
+          <a href="videos.html">Videos</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h1>Gallery</h1>
+        <p>
+          Explore live performances, spiritual events, studio sessions and memorable moments from Sanjay Shangloo's musical journey.
         </p>
-
-        <div class="social-slider">
-          <div class="social-track">
-            <!-- First Set -->
-            <div class="social-card">
-              <img src="social1.jpg" alt="Instagram Highlight" />
-              <p>Instagram Highlight</p>
-            </div>
-
-            <div class="social-card">
-              <img src="social2.jpg" alt="Facebook Highlight" />
-              <p>Facebook Highlight</p>
-            </div>
-
-            <div class="social-card">
-              <img src="social3.jpg" alt="Live Event" />
-              <p>Live Event</p>
-            </div>
-
-            <div class="social-card">
-              <img src="social4.jpg" alt="Stage Performance" />
-              <p>Stage Performance</p>
-            </div>
-
-            <!-- Duplicate Set for Infinite Scroll -->
-            <div class="social-card">
-              <img src="social1.jpg" alt="Instagram Highlight" />
-              <p>Instagram Highlight</p>
-            </div>
-
-            <div class="social-card">
-              <img src="social2.jpg" alt="Facebook Highlight" />
-              <p>Facebook Highlight</p>
-            </div>
-
-            <div class="social-card">
-              <img src="social3.jpg" alt="Live Event" />
-              <p>Live Event</p>
-            </div>
-
-            <div class="social-card">
-              <img src="social4.jpg" alt="Stage Performance" />
-              <p>Stage Performance</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="buttons">
-          <a href="https://www.facebook.com/sanjayshangloomusic" target="_blank" class="btn btn-secondary">
-            Facebook
-          </a>
-          <a href="https://www.instagram.com/sanjayshanglooo" target="_blank" class="btn btn-primary">
-            Instagram
-          </a>
-        </div>
       </div>
     </section>
-  </main>
 
-  <footer>
-    <div class="container">
-      © 2026 Sanjay Shangloo. All Rights Reserved.
-    </div>
-  </footer>
+    <!-- Featured Photos -->
+    <section>
+      <div class="container">
+        <h2 class="section-title">Featured Photos</h2>
+        <p class="section-text">
+          Upload your own images to the repository and change the file names below.
+        </p>
 
-  <script>
-    function toggleMenu() {
-      document.getElementById('mainNav').classList.toggle('open');
-    }
-  </script>
-</body>
+        <div class="gallery-grid">
+          <a href="gallery1.jpg" class="gallery-item" target="_blank">
 </html>
