@@ -242,27 +242,19 @@
       text-align: center;
     }
 
-    @media (max-width: 900px) {
-  .release-grid {
-    grid-template-columns: 1fr;
-  }
+    .menu {
+  display: none !important;
+}
 
-  /* Hide desktop menu */
-  .menu {
-    display: none !important;
-  }
+.mobile-menu {
+  display: block !important;
+  position: relative;
+  width: 100%;
+}
 
-  /* Show mobile hamburger */
-  .mobile-menu {
-    display: block;
-    position: relative;
-    width: 100%;
-  }
-
-  nav {
-    justify-content: flex-start;
-  }
-
+nav {
+  justify-content: flex-start !important;
+}
   #menu-toggle {
     display: none;
   }
@@ -424,7 +416,7 @@
      title="JioSaavn">
     <img src="jiosaavn.png"
      alt="JioSaavn"
-     style="width: 20px; height: 20px; object-fit: contain;">
+     style="width: 24px; height: 24px; object-fit: contain;">
   </a>
 
   <!-- Amazon Music -->
